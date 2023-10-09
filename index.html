@@ -116,11 +116,10 @@
       document.body.appendChild(script);
     </script>
     <!-- Include Firebase Authentication SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore-compat.js"></script>
-    <!-- Include Firebase Realtime Database SDK -->
-    <script src="/__/firebase/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics-compat.js"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
@@ -130,7 +129,7 @@
     
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
+      const firebaseApp = {
         apiKey: "AIzaSyA2VH9s-D3FUrhhxPER1tmzCnYYZL83gLo",
         authDomain: "unity-ff7cc.firebaseapp.com",
         projectId: "unity-ff7cc",
@@ -141,9 +140,8 @@
       };
     
       // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const auth = app.auth(); // Corrected 'firebase.auth()' to 'app.auth()'
+      const db = firebaseApp.firestore();
+	    const auth = firebaseApp.auth();
     </script>
   </body>
 </html>
