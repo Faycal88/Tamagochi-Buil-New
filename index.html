@@ -6,7 +6,6 @@
     <title>Unity WebGL Player | Tamagotchi 3D</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -45,9 +44,9 @@
         var div = document.createElement('div');
         div.innerHTML = msg;
         warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        if (type == 'error') div.style.background = 'red'; // Corrected 'style' assignment
         else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          if (type == 'warning') div.style.background = 'yellow'; // Corrected 'style' assignment
           setTimeout(function() {
             warningBanner.removeChild(div);
             updateBannerVisibility();
@@ -116,11 +115,12 @@
       };
       document.body.appendChild(script);
     </script>
-        <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore-compat.js"></script>
-        <script src="/__/firebase/8.10.1/firebase-database.js"></script>
-   
+    <!-- Include Firebase Authentication SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore-compat.js"></script>
+    <!-- Include Firebase Realtime Database SDK -->
+    <script src="/__/firebase/8.10.1/firebase-database.js"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
@@ -143,9 +143,7 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
-      const auth = firebase.auth();
-
+      const auth = app.auth(); // Corrected 'firebase.auth()' to 'app.auth()'
     </script>
-    
   </body>
 </html>
