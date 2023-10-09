@@ -140,8 +140,9 @@
       };
     
       // Initialize Firebase
-      const db = firebaseApp.firestore();
-	    const auth = firebaseApp.auth();
+      const app = initializeApp(firebaseApp);
+      const db = app.firestore();
+	    const auth = app.auth();
     </script>
   </body>
 </html>
