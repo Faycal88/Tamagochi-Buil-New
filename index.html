@@ -142,9 +142,9 @@
       };
     
       // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+      const firebase = initializeApp(firebaseConfig);
+      const db = getFirestore(firebase);
+      const auth = getAuth(firebase);
     </script>
   </body>
 </html>
