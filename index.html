@@ -142,9 +142,14 @@
       };
     
       // Initialize Firebase
-      const firebase = initializeApp(firebaseConfig);
-      const db = getFirestore(firebase);
-      const auth = getAuth(firebase);
+      try {
+    const firebase = initializeApp(firebaseConfig);
+    const db = getFirestore(firebase);
+    const auth = getAuth(firebase);
+    } catch (error) {
+    console.error("Firebase initialization error:", error);
+    }
+      
     </script>
   </body>
 </html>
