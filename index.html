@@ -109,6 +109,16 @@
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
+          // Initialize Firebase
+      try {
+    const firebase = initializeApp(firebaseConfig);
+    console.log(firebase);
+    
+    } catch (error) {
+    console.error("Firebase initialization error:", error);
+    }
+    const db = getFirestore(firebase);
+    const auth = getAuth(firebase);
         }).catch((message) => {
           alert(message);
         });
@@ -141,16 +151,7 @@
   measurementId: "G-7P93VSKKXL"
       };
     
-      // Initialize Firebase
-      try {
-    const firebase = initializeApp(firebaseConfig);
-    console.log(firebase);
-    
-    } catch (error) {
-    console.error("Firebase initialization error:", error);
-    }
-    /* const db = getFirestore(firebase);
-    const auth = getAuth(firebase); */
+      
     </script>
   </body>
 </html>
