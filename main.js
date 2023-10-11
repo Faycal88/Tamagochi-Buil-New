@@ -18,14 +18,10 @@ const app = initializeApp(FirebaseConfig);
 const auth = getAuth(app);
 
 
-const firebase = {
-    auth: {
-        signInWithEmailAndPassword,
-        createUserWithEmailAndPassword,
-        
-    }
-};
 
-export default firebase;
+
+export default module = {
+    auth,
+}
 
 
