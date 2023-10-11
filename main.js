@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword }  from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,OnAuthStateChanged }  from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
 
 
@@ -22,6 +22,7 @@ const firebase = {
     auth: {
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
+        OnAuthStateChanged,
     }
 };
 
