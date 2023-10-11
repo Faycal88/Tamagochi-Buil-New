@@ -33,6 +33,9 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
+
+      var unityInstance;
+
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -106,8 +109,9 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then((instance) => {
           loadingBar.style.display = "none";
+          unityInstance = instance;
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
